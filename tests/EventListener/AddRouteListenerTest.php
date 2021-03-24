@@ -6,7 +6,7 @@ use GtmPlugin\EventListener\AddRouteListener;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Xynnn\GoogleTagManagerBundle\Service\GoogleTagManager;
 
 /**
@@ -25,7 +25,7 @@ class AddRouteListenerTest extends TestCase
 
         $gtm = new GoogleTagManager(true, 'id1234');
         $listener = new AddRouteListener($gtm, $requestStack);
-        $mock = $this->getMockBuilder(GetResponseEvent::class)->disableOriginalConstructor()->getMock();
+        $mock = $this->getMockBuilder(ResponseEvent::class)->disableOriginalConstructor()->getMock();
         $listener->onKernelRequest($mock);
 
         $this->assertArrayHasKey('route', $gtm->getData());
