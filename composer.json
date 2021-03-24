@@ -1,10 +1,10 @@
 {
-    "name": "stefandoorn/google-tag-manager-plugin",
+    "name": "titi60/google-tag-manager-plugin",
     "type": "sylius-plugin",
     "description": "Google Tag Manager plugin for Sylius.",
     "license": "MIT",
     "require": {
-        "sylius/sylius": "^1.0",
+        "sylius/sylius": "^1.9",
         "xynnn/google-tag-manager-bundle": "^2.3.1"
     },
     "require-dev": {
