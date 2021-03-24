@@ -5,20 +5,14 @@ namespace GtmPlugin\DependencyInjection;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
-/**
- * Class Configuration
- * @package GtmPlugin\DependencyInjection
- */
 final class Configuration implements ConfigurationInterface
 {
-    /**
-     * {@inheritdoc}
-     */
+
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
+        $treeBuilder = new TreeBuilder('gtm');
 
-        $rootNode = $treeBuilder->root('gtm');
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
             ->children()
